@@ -1,0 +1,16 @@
+.wn1{height:53px ;width:40vw;margin:auto;margin-top:40px; border-radius:7px;
+    box-shadow:1px 1px 6px 1px rgba(0,0,0,0.7); } 
+    
+.wn1 input{height:inherit ;width:inherit; padding-left:10px;border:none;outline:none;border-radius:7px; }    
+
+.wn2,.edit{height:100px ;width:40vw;margin:auto;box-shadow:1px 1px 6px 1px rgba(0,0,0,0.7); outline:none;margin-top:40px; border-radius:7px;position:relative} 
+
+.edit{height:130px}
+.edit input,.wn2 input{height:25px ;width:39.5vw; padding-left:10px;margin-top:1px;margin-bottom:13px; font-weight: bold; font-size: large; border:none;outline:none}  
+
+.edit textarea,.wn2 textarea{height:50px ;width:39.5vw; padding-left:10px;border:none;outline:none;resize:none; font-size: 14px;} 
+
+.edit button{position :absolute;bottom:2px; right:2px;border-radius:7px;background-color:orange;border:none;height:20px;width:70px;font-size:small;}
+.wn2 button{position :absolute;bottom:-10px; right:-13px;border-radius:50%;background-color:orange;border:none;height:27px;width:30px;font-size:x-large;}
+
+.showitems{height:auto;width:76vw;margin:auto;display:flex;flex-wrap:wrap;margin-top:40px; justify-content: flex-start;}

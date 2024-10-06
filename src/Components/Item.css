@@ -1,0 +1,20 @@
+.itm {height:100px;width:200px;border:1px solid grey; margin:20px;border-radius:7px;
+   position:relative }
+.itm:hover{box-shadow:1px 1px 6px -2px rgba(0,0,0,0.7);}    
+#p1{font-size: medium;margin:1px; padding:2px}
+#p2{font-size: small;margin:1px; padding:2px}
+
+.icons{position:absolute;bottom:0px;right:0px; display:none;}
+.icons button{cursor:pointer;margin-left:7px;margin-right:7px; background-color: transparent;border:none;outline:none; }
+
+.itm:hover .icons{display:block}
+
+.color{height:30px;width:100px;position:absolute;bottom:-35px;left:10px;
+     margin:20px;border-radius:7px;outline:none;
+    box-shadow:1px 1px 6px -2px rgba(0,0,0,0.7);background-color: white;}
+
+#btn1,#btn2,#btn3,#btn4{height:24px;width:22px;margin:1px;border-radius:50%;border:none}
+#btn1{background-color:rgb(251, 251, 48);}
+#btn2{background-color: rgb(189, 250, 118);}
+#btn3{background-color: rgb(253, 144, 189);}
+#btn4{background-color: aquamarine;}    
