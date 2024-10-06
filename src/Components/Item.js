@@ -4,37 +4,39 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { useState } from "react";
 function Item(props)
 {
-
-    let [mycolor, setcolor]=useState({backgroundColor:"white"});// item wle container ka color
+const [state,setState]=useState({
+   mycolor:{backgroundColor:"white"},
+   openpalette:false,itemcode:[]
+})
  
-    let [openpalette, setpalette]=useState(false);
     function opencolor(){
-        if(openpalette===false)
-           setpalette(true);}
+        if(state.openpalette===false)
+         setState((prev)=>{return{...prev,openpalette:true}})
+         }
 
     function closecolor(){   
+      setState((prev)=>{return{...prev,openpalette:false}})
         
-           setpalette(false);
 
     }
-    let [itemcode,setitemcode]=useState([]);
 
   function clickcolor(event){
+   let x
     if(event.target.name==="btn1")
-       {setcolor({backgroundColor:"rgb(251, 251, 48)"}); }
+       {x={backgroundColor:"rgb(251, 251, 48)"} }
     else if(event.target.name==="btn2")
-       {setcolor({backgroundColor:"rgb(189, 250, 118)"});}
+       {x={backgroundColor:"rgb(189, 250, 118)"}}
     else if(event.target.name==="btn3")
-       {setcolor({backgroundColor:"rgb(253, 144, 189)"});}
+       {x={backgroundColor:"rgb(253, 144, 189)"}}
     else if(event.target.name==="btn4")
-       {setcolor({backgroundColor:"aquamarine"});}
+       {x={backgroundColor:"aquamarine"}}
 
-       setitemcode([...itemcode,{id:props.id,color:mycolor}]);
+       setState((prev)=>{return {...prev,mycolor:x, itemcode:[...state.itemcode,{id:props.id,color:state.mycolor}] }})
     }
 
     
     return(<>
-        <div className="itm" style={mycolor} onMouseLeave={closecolor}>
+        <div className="itm" style={state.mycolor} onMouseLeave={closecolor}>
             <div>
             <p id="p1">{props.passarr.titl}</p>
             <p id="p2">{props.passarr.content}</p></div>
@@ -42,10 +44,12 @@ function Item(props)
             <div className="icons">
              <button onClick={opencolor} title="background color"><PaletteIcon /></button>
              
-             <button onClick={()=>{props.delfunc(props.id);}}><DeleteIcon/></button>
+             <button onClick={()=>{
+               setState((prev)=>{return{...prev, mycolor:{backgroundColor:"white"},}})
+               props.delfunc(props.id);}}><DeleteIcon/></button>
             </div>
       
-        <div className="color" style={{display:openpalette?"block":"none"}}>
+        <div className="color" style={{display:state.openpalette?"block":"none"}}>
         <button id="btn1" name="btn1" onClick={clickcolor} ></button>
         <button id="btn2" name="btn2" onClick={clickcolor} ></button>
         <button id="btn3" name="btn3" onClick={clickcolor}></button>
